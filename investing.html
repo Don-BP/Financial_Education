@@ -25,7 +25,7 @@
         <nav class="container">
             <a href="index.html" class="logo">Financial Freedom</a>
             <div class="header-controls">
-                <ul>
+                <ul class="nav-links-desktop">
                     <li><a href="pension.html" data-lang-key="nav_pension">Pension</a></li>
                     <li><a href="insurance.html" data-lang-key="nav_insurance">Insurance</a></li>
                     <li><a href="investing.html" class="active" data-lang-key="nav_investing">Investing</a></li>
@@ -33,32 +33,42 @@
                 </ul>
                 <button class="theme-switcher" id="theme-switcher" aria-label="Toggle theme">☀️</button>
                 <button class="btn" id="language-switcher" data-lang-key="lang_switcher">日本語</button>
+                <button class="hamburger-menu" id="hamburger-menu" aria-label="Open menu">☰</button>
             </div>
         </nav>
+        <div class="nav-links-mobile" id="nav-links-mobile">
+            <a href="pension.html" data-lang-key="nav_pension">Pension</a>
+            <a href="insurance.html" data-lang-key="nav_insurance">Insurance</a>
+            <a href="investing.html" class="active" data-lang-key="nav_investing">Investing</a>
+            <a href="seminars.html" class="btn btn-primary" data-lang-key="nav_seminar">Free Seminar</a>
+        </div>
     </header>
 
-    <main class="container">
+    <!-- *** FIX APPLIED HERE: The <main> tag now has no class. Each section inside controls its own background and container, ensuring consistency. *** -->
+    <main>
         <section class="content-section">
-            <h2 class="section-title" data-aos="fade-up" data-lang-key="investing_section1_title">The Most Powerful Force in Finance: Compound Interest (複利)</h2>
-            <div class="two-col-layout" data-aos="fade-up">
-                <div class="text-content">
-                    <h3 data-lang-key="investing_section1_subtitle">Why Isn't This Common Knowledge in Japan?</h3>
-                    <p data-lang-key="investing_section1_p1">Warren Buffett said, "My wealth has come from a combination of living in America, some lucky genes, and compound interest." It is the engine of wealth creation, yet it's a concept rarely taught in Japanese schools. This gap in financial education leaves many people stuck in a cycle of saving without growing.</p>
-                    <ul>
-                        <li data-lang-key="investing_list_item1"><strong>Simple Interest:</strong> You earn interest only on your initial investment (元本 - ganpon). It's linear, slow, and how a basic bank account works.</li>
-                        <li data-lang-key="investing_list_item2"><strong>Compound Interest:</strong> You earn interest on your initial investment AND on the accumulated interest. It's "interest on interest," leading to exponential growth. It makes your money work for you.</li>
-                    </ul>
-                </div>
-                <div class="image-content">
-                    <img src="images/growth-chart.jpg" alt="A chart showing exponential growth of compound interest vs linear growth of simple interest">
+            <div class="container">
+                <h2 class="section-title" data-aos="fade-up" data-lang-key="investing_section1_title">The Most Powerful Force in Finance: Compound Interest (複利)</h2>
+                <div class="two-col-layout" data-aos="fade-up">
+                    <div class="text-content">
+                        <h3 data-lang-key="investing_section1_subtitle">Why Isn't This Common Knowledge in Japan?</h3>
+                        <p data-lang-key="investing_section1_p1">Warren Buffett said, "My wealth has come from a combination of living in America, some lucky genes, and compound interest." It is the engine of wealth creation, yet it's a concept rarely taught in Japanese schools. This gap in financial education leaves many people stuck in a cycle of saving without growing.</p>
+                        <ul>
+                            <li data-lang-key="investing_list_item1"><strong>Simple Interest:</strong> You earn interest only on your initial investment (元本 - ganpon). It's linear, slow, and how a basic bank account works.</li>
+                            <li data-lang-key="investing_list_item2"><strong>Compound Interest:</strong> You earn interest on your initial investment AND on the accumulated interest. It's "interest on interest," leading to exponential growth. It makes your money work for you.</li>
+                        </ul>
+                    </div>
+                    <div class="image-content">
+                        <img src="images/growth-chart.jpg" alt="A chart showing exponential growth of compound interest vs linear growth of simple interest">
+                    </div>
                 </div>
             </div>
         </section>
-
+        
         <section class="content-section alt-bg">
-             <div class="container">
-                <h2 class="section-title" data-aos="fade-up" data-lang-key="investing_section2_title">An Illustration: The Three Pandas</h2>
-                <div class="card-grid" data-aos="fade-up">
+             <div class="container" data-aos="fade-up">
+                <h2 class="section-title" data-lang-key="investing_section2_title">An Illustration: The Three Pandas</h2>
+                <div class="card-grid">
                     <div class="card">
                         <h3 data-lang-key="investing_panda1_title">🐼 Panda A: The Worker</h3>
                         <p data-lang-key="investing_panda1_text">Works hard for his bamboo salary. If he doesn't work, he doesn't eat. His financial situation is static and dependent on his labor.</p>
@@ -72,28 +82,30 @@
                         <p data-lang-key="investing_panda3_text">Uses his saved bamboo to plant a grove. The grove produces more bamboo automatically, and he uses that to plant even more groves. His wealth grows on its own, independent of his daily work.</p>
                     </div>
                 </div>
-                <p style="text-align: center; margin-top: 2rem; font-size: 1.2rem;" data-aos="fade-up" data-lang-key="investing_panda_conclusion">The goal of smart financial planning is to stop being Panda A or B, and become Panda C.</p>
+                <p style="text-align: center; margin-top: 2rem; font-size: 1.2rem;" data-lang-key="investing_panda_conclusion">The goal of smart financial planning is to stop being Panda A or B, and become Panda C.</p>
             </div>
         </section>
         
-        <section class="content-section container">
-            <div class="card" data-aos="fade-up" style="border-left: 5px solid var(--color-accent);">
-                <h3 data-lang-key="investing_inertia_title">The Cost of Doing Nothing: Financial Inertia</h3>
-                <p data-lang-key="investing_inertia_p1">The biggest enemy to building wealth is often not making a "bad" decision, but making no decision at all. This inertia is fueled by two cultural traps:</p>
-                <ul>
-                    <li data-lang-key="investing_inertia_li1"><strong>The "Gaman" Trap:</strong> The spirit of endurance is admirable, but in finance, just 'enduring' a bad situation (like a 0.001% interest rate) means passively accepting a poorer future.</li>
-                    <li data-lang-key="investing_inertia_li2"><strong>The "Boiling Frog" Syndrome:</strong> Financial erosion from inflation is slow and often unnoticed, like a frog in slowly heating water. It doesn't feel dangerous day-to-day, but the long-term impact is severe.</li>
-                </ul>
-            </div>
-             <div class="reality-check" data-aos="fade-up" style="margin-top: 4rem;">
-                <p class="question" data-lang-key="investing_reality_q">Reality Check: See the staggering difference a 10-year delay makes. Both scenarios assume investing ¥50,000/month at a 6% annual return, aiming for retirement at age 65.</p>
-                <div style="display: flex; gap: 1rem; margin-top: 1rem; flex-wrap: wrap;">
-                    <button class="btn btn-primary" id="start-25" style="background-color: var(--color-success);" data-lang-key="investing_reality_btn1">Start at Age 25</button>
-                    <button class="btn btn-primary" id="start-35" style="background-color: var(--color-secondary);" data-lang-key="investing_reality_btn2">Start at Age 35</button>
+        <section class="content-section">
+            <div class="container">
+                <div class="card" data-aos="fade-up" style="border-left: 5px solid var(--color-accent);">
+                    <h3 data-lang-key="investing_inertia_title">The Cost of Doing Nothing: Financial Inertia</h3>
+                    <p data-lang-key="investing_inertia_p1">The biggest enemy to building wealth is often not making a "bad" decision, but making no decision at all. This inertia is fueled by two cultural traps:</p>
+                    <ul>
+                        <li data-lang-key="investing_inertia_li1"><strong>The "Gaman" Trap:</strong> The spirit of endurance is admirable, but in finance, just 'enduring' a bad situation (like a 0.001% interest rate) means passively accepting a poorer future.</li>
+                        <li data-lang-key="investing_inertia_li2"><strong>The "Boiling Frog" Syndrome:</strong> Financial erosion from inflation is slow and often unnoticed, like a frog in slowly heating water. It doesn't feel dangerous day-to-day, but the long-term impact is severe.</li>
+                    </ul>
                 </div>
-                <div class="reality-answer" id="wait-answer">
-                    <h4>Final Value at Age 65: <strong id="wait-result" style="font-size: 1.5rem;">¥0</strong></h4>
-                    <p id="wait-explanation"></p>
+                 <div class="reality-check" data-aos="fade-up" style="margin-top: 4rem;">
+                    <p class="question" data-lang-key="investing_reality_q">Reality Check: See the staggering difference a 10-year delay makes. Both scenarios assume investing ¥50,000/month at a 6% annual return, aiming for retirement at age 65.</p>
+                    <div style="display: flex; gap: 1rem; margin-top: 1rem; flex-wrap: wrap;">
+                        <button class="btn btn-primary" id="start-25" style="background-color: var(--color-success);" data-lang-key="investing_reality_btn1">Start at Age 25</button>
+                        <button class="btn btn-primary" id="start-35" style="background-color: var(--color-secondary);" data-lang-key="investing_reality_btn2">Start at Age 35</button>
+                    </div>
+                    <div class="reality-answer" id="wait-answer">
+                        <h4>Final Value at Age 65: <strong id="wait-result" style="font-size: 1.5rem;">¥0</strong></h4>
+                        <p id="wait-explanation"></p>
+                    </div>
                 </div>
             </div>
         </section>
@@ -103,7 +115,7 @@
                 <h2 class="section-title" data-lang-key="investing_calc_title">Compound Interest Calculator</h2>
                 <div class="calculator-container" id="compound-calculator">
                      <div class="form-group">
-                        <label for="initial-investment">Initial Investment (JPY)
+                        <label for="initial-investment" data-lang-key="investing_calc_label1">Initial Investment (JPY)
                             <div class="tooltip">?
                                 <span class="tooltiptext">The amount of money you are starting with. This can be 0.</span>
                             </div>
@@ -111,7 +123,7 @@
                         <input type="number" id="initial-investment" placeholder="e.g., 1000000">
                     </div>
                      <div class="form-group">
-                        <label for="monthly-contribution">Monthly Contribution (JPY)
+                        <label for="monthly-contribution" data-lang-key="investing_calc_label2">Monthly Contribution (JPY)
                             <div class="tooltip">?
                                 <span class="tooltiptext">The amount you plan to add to your investment each month.</span>
                             </div>
@@ -119,7 +131,7 @@
                         <input type="number" id="monthly-contribution" placeholder="e.g., 50000">
                     </div>
                     <div class="form-group">
-                        <label for="investment-years">Years to Grow
+                        <label for="investment-years" data-lang-key="investing_calc_label3">Years to Grow
                             <div class="tooltip">?
                                 <span class="tooltiptext">The number of years you plan to let your investment grow. Time is the most critical ingredient.</span>
                             </div>
@@ -127,14 +139,14 @@
                         <input type="number" id="investment-years" placeholder="e.g., 20">
                     </div>
                     <div class="form-group">
-                        <label for="ci-annual-return">Estimated Annual Return (%)
+                        <label for="ci-annual-return" data-lang-key="investing_calc_label4">Estimated Annual Return (%)
                             <div class="tooltip">?
                                 <span class="tooltiptext">The average yearly return you expect. 6% is a conservative estimate for a diversified portfolio.</span>
                             </div>
                         </label>
                         <input type="number" id="ci-annual-return" placeholder="e.g., 6">
                     </div>
-                    <button id="calculate-compound-btn" class="btn btn-primary" style="width: 100%;">See the Magic</button>
+                    <button id="calculate-compound-btn" class="btn btn-primary" style="width: 100%;" data-lang-key="investing_calc_btn">See the Magic</button>
                     
                     <div class="results" id="compound-results" style="display:none;">
                         <h4>Future Value After <span id="years-text"></span> Years:</h4>
@@ -179,6 +191,7 @@
     <script src="js/theme.js"></script>
     <script src="js/translations.js"></script>
     <script src="js/language.js"></script>
+    <script src="js/mobile-nav.js"></script>
     <script src="js/compound-calculator.js"></script>
 </body>
 </html>

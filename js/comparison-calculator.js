@@ -1,3 +1,4 @@
+// js/comparison-calculator.js
 document.addEventListener('DOMContentLoaded', function () {
     const monthlyPremiumInput = document.getElementById('monthly-premium');
     const policyYearsInput = document.getElementById('policy-years');
@@ -43,22 +44,22 @@ document.addEventListener('DOMContentLoaded', function () {
             <h4>Results After ${years} Years</h4>
             <div class="two-col-layout" style="text-align: left;">
                 <div>
-                    <h4>1. Insurance Policy Outcome</h4>
-                    <p><strong>What you paid in:</strong> ¥${totalPaid.toLocaleString()}</p>
+                    <h4 data-lang-key="insurance_calc_h4_1">1. Your "Savings" Insurance Policy</h4>
+                    <p><strong>What you paid in (Total Premiums):</strong> ¥${totalPaid.toLocaleString()}</p>
                     <hr>
                     <p><u><strong>If you LIVE</strong> (Cancel Policy):</u></p>
                     <p><strong>What you get back (Cash Value):</strong> <strong style="font-size:1.2rem;">¥${cashValue.toLocaleString()}</strong></p>
                     <p class="gain"><strong>Your Net Gain / Loss:</strong> <span class="${insuranceGain >= 0 ? 'winner' : 'loser'}">¥${insuranceGain.toLocaleString()}</span></p>
-                    ${fees > 0 ? `<p class="loser"><strong>(Amount lost to fees/costs: ¥${fees.toLocaleString()})</strong></p>` : ''}
+                    ${fees > 0 ? `<p class="loser"><strong>(Amount taken in fees/costs: ¥${fees.toLocaleString()})</strong></p>` : ''}
                     <hr>
                     <p><u><strong>If you PASS AWAY:</strong></u></p>
                     <p><strong>Death Benefit for Family:</strong> <strong style="font-size:1.2rem;">¥${deathBenefit.toLocaleString()}</strong></p>
                 </div>
                 <div>
-                    <h4>2. Smarter Investment Outcome</h4>
+                    <h4 data-lang-key="insurance_calc_h4_2">2. A Smarter Investment Plan</h4>
                     <p><strong>What you paid in:</strong> ¥${totalPaid.toLocaleString()}</p>
                     <hr>
-                    <p><u><strong>If you LIVE:</strong></u></p>
+                     <p><u><strong>If you LIVE:</strong></u></p>
                     <p><strong>What you get back (Final Value):</strong> <strong class="final-value winner" style="font-size:1.2rem;">¥${futureValueInvest.toLocaleString('ja-JP', { maximumFractionDigits: 0 })}</strong></p>
                 </div>
             </div>
