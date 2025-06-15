@@ -1,5 +1,9 @@
+// js/compound-calculator.js
 document.addEventListener('DOMContentLoaded', function() {
-    document.getElementById('calculate-compound-btn').addEventListener('click', function() {
+    const calculateBtn = document.getElementById('calculate-compound-btn');
+    if (!calculateBtn) return; 
+
+    calculateBtn.addEventListener('click', function() {
         const principal = parseFloat(document.getElementById('initial-investment').value) || 0;
         const monthlyContribution = parseFloat(document.getElementById('monthly-contribution').value) || 0;
         const years = parseFloat(document.getElementById('investment-years').value) || 0;
@@ -21,20 +25,28 @@ document.addEventListener('DOMContentLoaded', function() {
         const totalContributions = principal + (monthlyContribution * months);
         const totalInterest = futureValue - totalContributions;
 
-        document.getElementById('years-text').textContent = years;
-        document.getElementById('compound-amount').textContent = `¥${futureValue.toLocaleString('ja-JP', { maximumFractionDigits: 0 })}`;
-        document.getElementById('total-contributions').textContent = `¥${totalContributions.toLocaleString('ja-JP')}`;
-        document.getElementById('total-interest').textContent = `¥${totalInterest.toLocaleString('ja-JP', { maximumFractionDigits: 0 })}`;
+        const resultsDiv = document.getElementById('compound-results');
         
-        const oldExplanation = document.querySelector('#compound-results .results-explanation');
-        if(oldExplanation) oldExplanation.remove();
-        
-        const explanationDiv = document.createElement('div');
-        explanationDiv.className = 'results-explanation';
-        explanationDiv.innerHTML = `<hr>
-        <p><strong>IMPACT:</strong> Notice how the 'Total Interest Earned' is a huge portion of your final value. This is your money working for you. Over long periods, the growth from compounding can vastly exceed your own contributions. This is the path to true financial independence.</p>`;
-        document.getElementById('compound-results').appendChild(explanationDiv);
-
-        document.getElementById('compound-results').style.display = 'block';
+        // *** FIX APPLIED HERE: The explanation is now inside the main results container ***
+        resultsDiv.innerHTML = `
+            <h4>Future Value After ${years} Years:</h4>
+            <p class="result-value" id="compound-amount">¥${futureValue.toLocaleString('ja-JP', { maximumFractionDigits: 0 })}</p>
+            <hr>
+            <div class="two-col-layout" style="text-align: left; gap: 1rem; margin-bottom: 1.5rem;">
+                <div>
+                    <p>What You Paid In:</p>
+                    <p><strong>¥${totalContributions.toLocaleString()}</strong></p>
+                </div>
+                <div>
+                    <p>What Your Money Earned:</p>
+                    <p><strong style="color: var(--color-success);">¥${totalInterest.toLocaleString('ja-JP', { maximumFractionDigits: 0 })}</strong></p>
+                </div>
+            </div>
+            <div class="results-explanation">
+                <h4 style="text-align:center;">What This Means For You</h4>
+                <p>This demonstrates the power of compounding. Notice how the 'What Your Money Earned' amount can grow to be a huge portion of your final wealth. Over long periods, the growth from compounding can vastly exceed your own contributions. This is the fundamental difference between simply saving and actively building wealth.</p>
+            </div>
+        `;
+        resultsDiv.style.display = 'block';
     });
 });
